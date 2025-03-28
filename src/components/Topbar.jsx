@@ -23,7 +23,7 @@ const Topbar = () => {
     <div>
       <Navbar className="p-3">
         <Container>
-          <Navbar.Brand>Artikel</Navbar.Brand>
+          <Navbar.Brand>Articles</Navbar.Brand>
 
           <Nav>
             <Nav.Item>
