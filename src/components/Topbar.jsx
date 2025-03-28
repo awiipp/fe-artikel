@@ -27,13 +27,13 @@ const Topbar = () => {
 
           <Nav>
             <Nav.Item>
-              <Nav.Link as={Link} to={'/article'}>
+              <Nav.Link as={Link} to={'/articles'}>
                 Article
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link as={Link} to={'/my-article'}>
+              <Nav.Link as={Link} to={'/my-articles'}>
                 My Article
               </Nav.Link>
             </Nav.Item>

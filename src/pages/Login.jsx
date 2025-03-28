@@ -20,11 +20,10 @@ const Login = () => {
     try {
       const response = await axios.post('/auth/login', data);
 
-      return console.log(response.data.user.accessToken);
-
       setToken(response.data.user.accessToken);
 
       return navigate('/');
+      return console.log(response.data.user.accessToken);
     } catch (error) {
       console.log(error.response.data);
     }
