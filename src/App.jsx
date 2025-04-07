@@ -11,6 +11,7 @@ import MyArticles from './pages/my-articles/MyArticles';
 import CreateArticle from './pages/my-articles/CreateArticle';
 import ShowArticle from './pages/articles/ShowArticle';
 import ReadArticle from './pages/articles/ReadArticle';
+import UpdateArticle from './pages/articles/UpdateArticle';
 
 function App() {
   return (
@@ -22,12 +23,13 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route element={<AuthLayout />}>
               <Route path="/" element={<Home />} />
+
               <Route path="/articles" element={<Articles />} />
               <Route path="/article/:id" element={<ShowArticle />} />
               <Route path="/article/read/:id" element={<ReadArticle />} />
-
               <Route path="/my-articles" element={<MyArticles />} />
               <Route path="/article/create" element={<CreateArticle />} />
+              <Route path="/article/edit/:id" element={<UpdateArticle />} />
             </Route>
           </Routes>
         </Container>

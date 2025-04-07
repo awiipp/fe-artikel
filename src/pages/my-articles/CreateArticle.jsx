@@ -1,10 +1,11 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 
 const CreateArticle = () => {
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,12 +20,15 @@ const CreateArticle = () => {
       navigate('/my-articles');
     } catch (error) {
       console.log(error.response.data);
+      setErrorMessage(error.response.data.message);
     }
   };
 
   return (
     <div>
       <h1>Create Article</h1>
+
+      {errorMessage && <p className="text-danger h5">*{errorMessage}</p>}
 
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
@@ -47,11 +51,14 @@ const CreateArticle = () => {
           </Form.Select>
         </Form.Group>
 
-        <Button as={Link} to={'/my-articles'} variant="secondary">
+        <Button type="submit">Submit</Button>
+        <Button
+          as={Link}
+          to={'/my-articles'}
+          variant="secondary"
+          className="m-3"
+        >
           Back
-        </Button>
-        <Button type="submit" className="m-3">
-          Submit
         </Button>
       </Form>
     </div>

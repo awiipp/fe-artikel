@@ -24,7 +24,7 @@ const ReadArticle = () => {
   return (
     <div>
       <h1>{data.title}</h1>
-      {/* <p className="fs-5 fw-semibold">By {data.user.name}</p> */}
+      <p className="fs-5 fw-semibold">By {data.user?.name}</p>
 
       <Container>
         <p>

@@ -66,6 +66,9 @@ const MyArticles = () => {
               >
                 delete
               </Button>
+              <Link to={`/article/edit/${article.id}`}>
+                <Button variant="secondary">edit</Button>
+              </Link>
             </Card.Footer>
           </Card>
         ))}
